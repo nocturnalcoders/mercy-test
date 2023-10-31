@@ -1,0 +1,64 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "lib/openzeppelin-contracts/contracts/interfaces/IERC165.sol",
+    "id": 43540,
+    "exportedSymbols": {
+      "IERC165": [
+        45315
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "106:86:20",
+    "nodes": [
+      {
+        "id": 43537,
+        "nodeType": "PragmaDirective",
+        "src": "106:24:20",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".20"
+        ]
+      },
+      {
+        "id": 43539,
+        "nodeType": "ImportDirective",
+        "src": "132:59:20",
+        "nodes": [],
+        "absolutePath": "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "file": "../utils/introspection/IERC165.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 43540,
+        "sourceUnit": 45316,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 43538,
+              "name": "IERC165",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 45315,
+              "src": "140:7:20",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 20
+}

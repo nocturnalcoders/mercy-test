@@ -1,0 +1,10 @@
+FROM rust:alpine
+
+RUN mkdir /app
+
+WORKDIR /app
+
+RUN foundryup
+
+
+

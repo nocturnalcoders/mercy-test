@@ -1,0 +1,43 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    container_name: database
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_ROOT_PASSWORD=${POSTGRES_ROOT_PASSWORD}"
+      - "POSTGRES_USER=${POSTGRES_USER}"
+      - "POSTGRES_PASSWORD=${POSTGRES_DB}"
+      - "POSTGRES_DATABASE=${POSTGRES_DB}"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./mercy-backend/
+      dockerfile: Dockerfile-backend
+    container_name: backend
+    ports:
+      - "8001:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./mercy-frontend/
+      dockerfile: Dockerfile-frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+  # foundry-node:
+  #   build:
+  #     context: ./mercy-contract-foundry/
+  #     dockerfile: Dockerfile-node
+  #   container_name: foundry-node
+  #   ports:
+  #     - "8545:8545"

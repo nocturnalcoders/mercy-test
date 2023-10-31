@@ -1,0 +1,38 @@
+FROM node:18-alpine AS base
+
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+
+COPY package.json package-lock.json* ./
+RUN npm ci
+
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY ./ ./
+COPY ./src/abis ./src/abis
+
+RUN npm run dev
+
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV production
+
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 reactjs
+
+COPY --from=builder /app/public ./public
+
+COPY --from=builder --chown=nextjs:nodejs /app/.reactjs/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.reactjs/static ./.reactjs/static
+
+USER reactjs
+
+EXPOSE 5173
+
+ENV PORT 5173
+
+CMD ["node", "server.js"]

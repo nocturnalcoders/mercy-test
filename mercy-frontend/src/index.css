@@ -1,0 +1,76 @@
+:root {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #333; /* Change the text color to your preferred color */
+  background-color: #f4f4f4; /* Change the background color to your preferred color */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 600; /* Increase the link's font weight for emphasis */
+  color: #0078d4; /* Change link color to your preferred color */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0050a1; /* Change link hover color to your preferred color */
+}
+
+body {
+  margin: 0;
+  display: block;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.5rem; /* Adjust heading font size */
+  line-height: 1.2;
+}
+
+button {
+  border-radius: 4px; /* Slightly round the button corners */
+  border: none;
+  padding: 0.8em 1.6em;
+  font-size: 1.1rem; /* Adjust button font size */
+  font-weight: 600; /* Make button text bold */
+  font-family: 'Arial', sans-serif; /* Apply a specific font family */
+  background-color: #0078d4; /* Button background color */
+  color: #fff; /* Button text color */
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+button:hover {
+  background-color: #0050a1; /* Button background color on hover */
+}
+
+button:focus,
+button:focus-visible {
+  outline: none; /* Remove the default outline on focus */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #333; /* Adjust text color for light mode */
+    background-color: #fff; /* Adjust background color for light mode */
+  }
+
+  a:hover {
+    color: #0078d4; /* Adjust link hover color for light mode */
+  }
+
+  button {
+    background-color: #0078d4; /* Adjust button background color for light mode */
+  }
+
+  button:hover {
+    background-color: #0050a1; /* Adjust button background color on hover for light mode */
+  }
+}

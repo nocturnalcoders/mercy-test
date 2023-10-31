@@ -1,0 +1,11 @@
+# Use a base image
+FROM node:18-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy your run.sh script into the container
+COPY run.sh /app/
+
+# Make run.sh executable (if necessary)
+RUN chmod +x run.sh
