@@ -27,7 +27,10 @@
 - run foundryup 
 - run Anvil -> for runing node
 - run ./run.sh -> for running the contract
-
+- set up chain id 1337
+- set up rpc uri : http://127.0.0.1:8545
+- set up currency ETH
+  
 # Reference Code
 1. https://www.youtube.com/watch?v=S3jJtGYI18E
 2. https://github.com/rahulkarda/NFT-Portal
